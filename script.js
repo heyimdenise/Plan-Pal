@@ -36,12 +36,12 @@ function displayIdeas(filter = "all") {
 function shuffleIdea() {
     // Check if there are any ideas first, if not then send an alert
     if(ideas.length === 0) {
-        return alert("No ideas yet!");
+        return alert("Error: No ideas yet! Try again by entering some below!");
     }
 
     const randomIdea = ideas[Math.floor(Math.random() * ideas.length)]; // Use Math randomw & floor to pick a random number for a random idea
 
-    alert(`Try this: ${randomIdea.text} (${randomIdea.category})`); // Send an alert of the chosen random idea
+    alert(`You should try: ${randomIdea.text} (${randomIdea.category})`); // Send an alert of the chosen random idea
 }
 
 // Function to filter specific category ideas

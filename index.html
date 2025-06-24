@@ -2,12 +2,13 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Hangout Ideas</title>
+        <title>Plan Pal</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/png" href="icons8-pixel-cat-16.png">
     </head>
     <body>
-        <h1>*⋆˚࿔ Hangout Ideas 𝜗𝜚˚⋆</h1>
-        <p class="subtitle">Write down your fun hangout ideas in the text box and select the category that fits accordingly to your idea!</p>
+        <h1>*⋆˚࿔ Welcome To Plan Pal! 𝜗𝜚˚⋆</h1>
+        <p class="subtitle">Plan Pal is your new go-to system for planning hangout ideas! Write down your fun hangout ideas in the text box and select the category that fits accordingly to your idea!</p>
 
         <div class="input-selection">
             <input id="ideaInput" type="text" placeholder="Add a new idea here!">
@@ -22,7 +23,7 @@
 
         <ul id="ideaList"></ul>
 
-        <p class="subtitle">Not sure what to choose? Get a random idea here!</p>
+        <p class="subtitle">Not sure what to choose? Get a random idea below:</p>
 
         <div class="shuffle-controls">
             <select id="filterSelect" onchange="filterIdeas()">
@@ -34,6 +35,13 @@
 
             <button onclick="shuffleIdea()">Shuffle</button>
         </div>
+
+        <!-- Credit to Icons8-->
+         <footer class="credits">
+            <small>
+                <a target="_blank" href="https://icons8.com/icon/r2dw-Klesiw2/pixel-cat">Pixel Cat</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+            </small>
+         </footer>
 
         <script src="script.js"></script>
     </body>

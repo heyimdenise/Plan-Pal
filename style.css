@@ -36,7 +36,7 @@ h1 {
 }
 
 .shuffle-controls {
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 .shuffle-controls button {
@@ -61,4 +61,10 @@ li {
     padding: 12px;
     width: 300px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.credits {
+    margin-top: 20px;
+    font-size: 0.75em;
+    color: #4c4c4c;
 }
