@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fceaf6;
+    text-align: center;
+    padding: 30px;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: rgb(31, 31, 31);
+    margin:  5px 0 20px;
+}
+
+.input-selection input, select {
+    padding: 10px;
+    font-size: 1em;
+    margin-right: 10px;
+}
+
+.input-selection button {
+    background-color: #f1b5d3;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+#ideaList {
+    min-height: 350px;
+}
+
+.shuffle-controls {
+    margin-top: 20px;
+}
+
+.shuffle-controls button {
+    background-color: #f1b5d3;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+li {
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    margin: 10px auto;
+    padding: 12px;
+    width: 300px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}

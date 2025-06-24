@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Hangout Ideas</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>*⋆˚࿔ Hangout Ideas 𝜗𝜚˚⋆</h1>
+        <p class="subtitle">Write down your fun hangout ideas in the text box and select the category that fits accordingly to your idea!</p>
+
+        <div class="input-selection">
+            <input id="ideaInput" type="text" placeholder="Add a new idea here!">
+            <select id="categorySelect">
+                <option value="any">Choose category</option>
+                <option value="food">🍽️ Food</option>
+                <option value="activity">🚗 Activity</option>
+                <option value="movie">🎥 Movie</option>
+            </select>
+            <button onclick="addIdea()">Add</button>
+        </div>
+
+        <ul id="ideaList"></ul>
+
+        <p class="subtitle">Not sure what to choose? Get a random idea here!</p>
+
+        <div class="shuffle-controls">
+            <select id="filterSelect" onchange="filterIdeas()">
+                <option value="all">All</option>
+                <option value="food">🍽️ Food</option>
+                <option value="activity">🚗 Activity</option>
+                <option value="movie">🎥 Movie</option>
+            </select>
+
+            <button onclick="shuffleIdea()">Shuffle</button>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
