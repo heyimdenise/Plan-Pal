@@ -28,7 +28,7 @@ function displayIdeas(filter = "all") {
     filtered.forEach((idea) => {
         const li = document.createElement("li"); // Create new li element
         li.textContent = `${idea.text} (${idea.category})`; // Add the new idea text and its category
-        list.appendChild(li); // Push this into the list on the page
+        list.prepend(li); // Push this into the list on the page, most recent idea at the top first
     });
 }
 
