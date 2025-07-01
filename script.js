@@ -16,7 +16,7 @@ function addIdea() {
     displayIdeas(); // Update the list on the page
 }
 
-// Function to display the user ideas to the page
+// Function to display the user ideas to the page. Added: each idea has a delete button
 function displayIdeas(filter = "all") {
     const list = document.getElementById("ideaList"); // Get the ul element
     list.innerHTML = ""; // Clear current list items 
@@ -27,8 +27,29 @@ function displayIdeas(filter = "all") {
     // Loop through each idea
     filtered.forEach((idea) => {
         const li = document.createElement("li"); // Create new li element
-        li.textContent = `${idea.text} (${idea.category})`; // Add the new idea text and its category
-        list.prepend(li); // Push this into the list on the page, most recent idea at the top first
+
+        // Create span for the idea text
+        const textSpan = document.createElement("span");
+        textSpan.textContent = `${idea.text} (${idea.category})`;
+
+        // Create delete button
+        const deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "🗑️";
+        deleteBtn.className = "delete-btn";
+
+        // Find the original idea in main ideas array
+        const orginalIndex = ideas.findIndex(obj => obj.text === idea.text && obj.category === idea.category);
+
+        // Delete the idea when delete button is clicked
+        deleteBtn.onclick = () => {
+            ideas.splice(orginalIndex, 1); // Remove from array
+            displayIdeas(filter);          // Show updated list
+        }
+
+        // Add to list item with most recent idea at the top of the list
+        li.appendChild(textSpan);
+        li.appendChild(deleteBtn);
+        list.prepend(li);
     });
 }
 
