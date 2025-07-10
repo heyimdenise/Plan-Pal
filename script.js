@@ -62,7 +62,7 @@ function shuffleIdea() {
 
     const randomIdea = ideas[Math.floor(Math.random() * ideas.length)]; // Use Math randomw & floor to pick a random number for a random idea
 
-    alert(`You should try: ${randomIdea.text} (${randomIdea.category})`); // Send an alert of the chosen random idea
+    alert(`You should try: ${randomIdea.text}!`); // Send an alert of the chosen random idea
 }
 
 // Function to filter specific category ideas
