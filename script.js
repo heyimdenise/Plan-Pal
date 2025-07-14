@@ -97,7 +97,7 @@ function showToast(message) {
         toast.style.opacity = "0";
     }, 3500); 
 
-    // Fully hide after fade out (added 300ms for fade)
+    // Fully hide after fade out (added 300ms)
     setTimeout(() => {
         toast.style.display = "none";
     }, 3800); 
