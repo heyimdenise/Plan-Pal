@@ -1,4 +1,5 @@
-let ideas = [];
+const savedIdeas = localStorage.getItem("PlanPalIdeas")
+let ideas = savedIdeas ? JSON.parse(savedIdeas) : [];
 
 // Function to add an idea to the page
 function addIdea() {
@@ -12,6 +13,7 @@ function addIdea() {
     }
 
     ideas.push({ text, category }); // Add input and its category to ideas list
+    localStorage.setItem("PlanPalIdeas", JSON.stringify(ideas)); // Save updated ideas list to localStorage (convert array to string)
     input.value = ""; // Clear input box for next user idea
     displayIdeas(); // Update the list on the page
 }
@@ -42,7 +44,8 @@ function displayIdeas(filter = "all") {
 
         // Delete the idea when delete button is clicked
         deleteBtn.onclick = () => {
-            ideas.splice(orginalIndex, 1); // Remove from array
+            ideas.splice(orginalIndex, 1); // Remove chosen idea from array
+            localStorage.setItem("PlanPalIdeas", JSON.stringify(ideas)); // Save updated list (after idea was deleted) to localStorage
             displayIdeas(filter);          // Show updated list
         }
 
