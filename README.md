@@ -3,7 +3,7 @@
 Plan Pal is a simple and easy web app for planning hangout ideas with friends or partners! Users can add, categorize, and delete activity ideas to help decide what to do together. In addition, a shuffle button is included if users are stuck on choosing which activity to do.
 
 **Features:**
-- Add and categorize ideas (e.g., food, activity, movie)
+- Add and categorize ideas (e.g., food, drinks, activity, movie)
 - Delete individual ideas
 - Filter by category
 - Shuffle ideas for a random suggestion
