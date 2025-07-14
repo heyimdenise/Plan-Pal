@@ -56,14 +56,25 @@ function displayIdeas(filter = "all") {
     });
 }
 
-// Function to choose a random idea from lsit
+// Function to choose a random idea from list, avoiding repeats of the same idea twice in a row
+let lastShuffledIndex = -1;
+
 function shuffleIdea() {
     // Check if there are any ideas first, if not then send an alert
     if(ideas.length === 0) {
-        return alert("Error: No ideas yet! Try again by entering some below!");
+        return alert("Error: No ideas yet! Please try again.");
     }
 
-    const randomIdea = ideas[Math.floor(Math.random() * ideas.length)]; // Use Math randomw & floor to pick a random number for a random idea
+    let randomIndex;
+
+    // Keep picking until it is different from the last index
+    do {
+        randomIndex = Math.floor(Math.random() * ideas.length);
+    } while (randomIndex === lastShuffledIndex && ideas.length > 1);
+
+    lastShuffledIndex = randomIndex;
+
+    const randomIdea = ideas[randomIndex];
 
     alert(`You should try: ${randomIdea.text}!`); // Send an alert of the chosen random idea
 }
@@ -73,3 +84,13 @@ function filterIdeas() {
     const filter = document.getElementById("filterSelect").value;
     displayIdeas(filter);
 }
+
+// On page load, restore ideas from localStorage
+window.onload = () => {
+    const stored = localStorage.getItem("PlanPalIdeas");
+    
+    if(stored) {
+        ideas = JSON.parse(stored);
+        displayIdeas(); // Show ideas right away
+    }
+};
