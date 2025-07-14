@@ -76,7 +76,7 @@ function shuffleIdea() {
 
     const randomIdea = ideas[randomIndex];
 
-    alert(`You should try: ${randomIdea.text}!`); // Send an alert of the chosen random idea
+    showToast(`You should try: ${randomIdea.text}!`); // Send an alert of the chosen random idea
 }
 
 // Function to filter specific category ideas
@@ -85,10 +85,28 @@ function filterIdeas() {
     displayIdeas(filter);
 }
 
+// Function to display toast popup
+function showToast(message) {
+    const toast = document.getElementById("toast");
+    toast.textContent = message;
+    toast.style.display = "block";
+    toast.style.opacity = "1";
+
+    // Start fade out after 3.5 seconds
+    setTimeout(() => {
+        toast.style.opacity = "0";
+    }, 3500); 
+
+    // Fully hide after fade out (added 300ms for fade)
+    setTimeout(() => {
+        toast.style.display = "none";
+    }, 3800); 
+}
+
 // On page load, restore ideas from localStorage
 window.onload = () => {
     const stored = localStorage.getItem("PlanPalIdeas");
-    
+
     if(stored) {
         ideas = JSON.parse(stored);
         displayIdeas(); // Show ideas right away
